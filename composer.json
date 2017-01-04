@@ -1,0 +1,26 @@
+{
+  "autoload":{
+    "psr-4":{
+      "IM\\MyService\\":"src"
+    }
+  },
+  "autoload-dev":{
+    "psr-4":{
+      "IM\\MyService\\":"tests/src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git"
+    }
+  ],
+  "require": {
+    "immediate/im-wp-plugin": "^0.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*",
+    "psy/psysh": "~0.6",
+    "phpunit/phpunit": "5.5.*"
+  }
+}

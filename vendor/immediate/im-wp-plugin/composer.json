@@ -1,0 +1,31 @@
+{
+    "name": "immediate/im-wp-plugin",
+    "description": "A WordPress plugin base package",
+    "keywords": ["wordpress"],
+    "type": "library",
+    "license": "Proprietary",
+    "authors": [
+        {
+            "name": "Rob Meijer",
+            "email": "rob.meijer@immediate.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "IM\\Fabric\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IM\\Fabric\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.4",
+        "league/container": "^2.2",
+        "league/event": "^2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.6"
+    }
+}
