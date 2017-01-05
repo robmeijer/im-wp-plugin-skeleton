@@ -3,8 +3,8 @@ This is a WordPress plugin skeleton to help you get started with a new plugin ba
 
 ## Getting Started
 To get started, you simply need to clone the repository into a new directory for your plugin.
-``` bash
-$ git clone git@github.immediate.co.uk:WCP/im-wp-plugin-skeleton.git
+```bash
+$ git clone git@github.immediate.co.uk:WCP/im-wp-plugin-skeleton.git <im-new-plugin>
 ```
 
 ## Updating Placeholders
@@ -12,6 +12,8 @@ The skeleton contains various placeholders that need to be updated for your plug
 ### Composer - composer.json
 Replace "PluginSkeleton" with the namespace of the service your plugin will provide, e.g. Subscriptions.
 ```json
+// composer.json
+
 "autoload": {
     "psr-4": {
         "IM\\PluginSkeleton\\":"src"
