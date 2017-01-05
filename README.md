@@ -10,7 +10,7 @@ $ git clone git@github.immediate.co.uk:WCP/im-wp-plugin-skeleton.git <im-new-plu
 ## Updating Placeholders
 The skeleton contains various placeholders that need to be updated for your plugin.
 ### Composer - composer.json
-Replace "PluginSkeleton" with the namespace of the service your plugin will provide, e.g. Subscriptions.
+Replace `PluginSkeleton` with the namespace of the service your plugin will provide, e.g. `Subscriptions`.
 ```json
 // composer.json
 
@@ -26,7 +26,7 @@ Replace "PluginSkeleton" with the namespace of the service your plugin will prov
 },
 ```
 ### WP Plugin Bootstrap
-The WP plugin bootstrap file, 'im-plugin-skeleton.php' should be renamed for your plugin, e.g. 'im-subscriptions.php'.
+The WP plugin bootstrap file, `im-plugin-skeleton.php` should be renamed for your plugin, e.g. `im-subscriptions.php`.
 There are also various elements within the bootstrap file that need to be updated, detailed below.
 ##### Plugin Metadata
 The plugin metadata needs to be updated to match your new plugin.
@@ -35,7 +35,11 @@ The plugin metadata needs to be updated to match your new plugin.
 $plugin = new IM\PluginSkeleton\PluginSkeletonPlugin();
 ```
 ### Plugin Class
-*TODO*
+The main plugin class is located in `/src`, and is typically named `<Service>Plugin` with the namespace `IM\<Service>`, e.g. `IM\Subscriptions\SubscriptionsPlugin`. The file name should be the same as the class name, e.g. `SubscriptionsPlugin.php`.
+   
+Please refer to [www.php-fig.org/psr/psr-4](http://www.php-fig.org/psr/psr-4) for more information.
+
+
 
 ## Finishing up
 *TODO*
