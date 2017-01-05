@@ -1,12 +1,12 @@
 {
-  "autoload":{
-    "psr-4":{
-      "IM\\MyService\\":"src"
+  "autoload": {
+    "psr-4": {
+      "IM\\PluginSkeleton\\":"src"
     }
   },
-  "autoload-dev":{
-    "psr-4":{
-      "IM\\MyService\\":"tests/src"
+  "autoload-dev": {
+    "psr-4": {
+      "IM\\PluginSkeleton\\Test\\":"tests/src"
     }
   },
   "repositories": [
