@@ -66,9 +66,10 @@ class WordPressEventEmitter
      * @param string $filter
      * @param callable $listener
      * @param int $priority
+     * @param int $args
      */
-    public function addFilter($filter, $listener, $priority = Emitter::P_NORMAL)
+    public function addFilter($filter, $listener, $priority = Emitter::P_NORMAL, $args = 1)
     {
-        add_filter($filter, [$listener, 'handle'], $priority);
+        add_filter($filter, [$listener, 'handle'], $priority, $args);
     }
 }

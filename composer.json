@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "immediate/im-wp-plugin": "^0.3"
+    "immediate/im-wp-plugin": "^0.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "2.*",

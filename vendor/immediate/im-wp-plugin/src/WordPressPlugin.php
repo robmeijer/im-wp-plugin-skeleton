@@ -39,11 +39,12 @@ abstract class WordPressPlugin extends Container
      * @param string $filter
      * @param \League\Event\ListenerInterface|callable $listener
      * @param int $priority
+     * @param int $args
      * @return mixed
      */
-    public function addFilter($filter, $listener, $priority = Emitter::P_NORMAL)
+    public function addFilter($filter, $listener, $priority = Emitter::P_NORMAL, $args = 1)
     {
-        return $this->get(WordPressEventEmitter::class)->addFilter($filter, $listener, $priority);
+        return $this->get(WordPressEventEmitter::class)->addFilter($filter, $listener, $priority, $args);
     }
 
     /**

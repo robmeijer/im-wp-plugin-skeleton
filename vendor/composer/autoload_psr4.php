@@ -9,6 +9,6 @@ return array(
     'League\\Event\\' => array($vendorDir . '/league/event/src'),
     'League\\Container\\' => array($vendorDir . '/league/container/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
-    'IM\\MyService\\' => array($baseDir . '/src'),
+    'IM\\PluginSkeleton\\' => array($baseDir . '/src'),
     'IM\\Fabric\\' => array($vendorDir . '/immediate/im-wp-plugin/src'),
 );
