@@ -1,12 +1,12 @@
 {
   "autoload": {
     "psr-4": {
-      "IM\\Fabric\\Search\\Mocks\\":"src"
+      "IM\\PluginSkeleton\\":"src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "IM\\Fabric\\Search\\Mocks\\":"tests/src"
+      "IM\\PluginSkeleton\\Test\\":"tests/src"
     }
   },
   "repositories": [
