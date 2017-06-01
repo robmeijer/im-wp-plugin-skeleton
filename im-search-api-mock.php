@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Plugin Name: IM Plugin Skeleton
- * Description: Skeleton for new plugins.
+ * Plugin Name: IM Search API Mock
+ * Description: Plugin to enable mock implementation of Search Show and SSTM
  * Version: 0.1
  * Author: Immediate Media
  * Author URI: http://www.immediate.co.uk
@@ -18,5 +18,5 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-$plugin = new IM\PluginSkeleton\PluginSkeletonPlugin();
+$plugin = new IM\Fabric\Search\Mocks\MockPlugin();
 $plugin->run();

@@ -6,9 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'League\\Event\\' => array($vendorDir . '/league/event/src'),
     'League\\Container\\' => array($vendorDir . '/league/container/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
-    'IM\\PluginSkeleton\\' => array($baseDir . '/src'),
+    'IM\\Fabric\\Search\\Mocks\\' => array($baseDir . '/src'),
     'IM\\Fabric\\' => array($vendorDir . '/immediate/im-wp-plugin/src'),
 );
