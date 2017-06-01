@@ -4,13 +4,9 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit61c8e585f55fb2ed1b094ed31035a571
+class ComposerStaticInit03e4d0e2ff25903123e8dab1f563b5da
 {
     public static $prefixLengthsPsr4 = array (
-        'P' => 
-        array (
-            'Psr\\Container\\' => 14,
-        ),
         'L' => 
         array (
             'League\\Event\\' => 13,
@@ -19,16 +15,12 @@ class ComposerStaticInit61c8e585f55fb2ed1b094ed31035a571
         'I' => 
         array (
             'Interop\\Container\\' => 18,
-            'IM\\Fabric\\Search\\Mocks\\' => 23,
+            'IM\\PluginSkeleton\\' => 18,
             'IM\\Fabric\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Psr\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
         'League\\Event\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/event/src',
@@ -41,7 +33,7 @@ class ComposerStaticInit61c8e585f55fb2ed1b094ed31035a571
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
-        'IM\\Fabric\\Search\\Mocks\\' => 
+        'IM\\PluginSkeleton\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -54,8 +46,8 @@ class ComposerStaticInit61c8e585f55fb2ed1b094ed31035a571
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit61c8e585f55fb2ed1b094ed31035a571::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit61c8e585f55fb2ed1b094ed31035a571::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit03e4d0e2ff25903123e8dab1f563b5da::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit03e4d0e2ff25903123e8dab1f563b5da::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

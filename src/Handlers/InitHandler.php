@@ -1,6 +1,6 @@
 <?php
 
-namespace IM\Fabric\Search\Mocks\Handlers;
+namespace IM\PluginSkeleton\Handlers;
 
 use League\Event\AbstractListener;
 use League\Event\EventInterface;
@@ -16,6 +16,6 @@ class InitHandler extends AbstractListener
      */
     public function handle(EventInterface $event)
     {
-        define("IM_SEARCH_API_MOCK", true);
+        // TODO: Implement handle() method.
     }
 }
