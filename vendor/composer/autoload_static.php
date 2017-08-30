@@ -4,9 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit03e4d0e2ff25903123e8dab1f563b5da
+class ComposerStaticInitea8eb9f08e5800169a988b0907c289b3
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'Psr\\Container\\' => 14,
+        ),
         'L' => 
         array (
             'League\\Event\\' => 13,
@@ -21,6 +25,10 @@ class ComposerStaticInit03e4d0e2ff25903123e8dab1f563b5da
     );
 
     public static $prefixDirsPsr4 = array (
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'League\\Event\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/event/src',
@@ -43,11 +51,76 @@ class ComposerStaticInit03e4d0e2ff25903123e8dab1f563b5da
         ),
     );
 
+    public static $classMap = array (
+        'IM\\Fabric\\Contracts\\AddFilterHandlerInterface' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Contracts/AddFilterHandlerInterface.php',
+        'IM\\Fabric\\Events\\WordPressEventEmitter' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Events/WordPressEventEmitter.php',
+        'IM\\Fabric\\Handlers\\AbstractAddFilterHandler' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Handlers/AbstractAddFilterHandler.php',
+        'IM\\Fabric\\Providers\\EventServiceProvider' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Providers/EventServiceProvider.php',
+        'IM\\Fabric\\WordPressPlugin' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressPlugin.php',
+        'IM\\PluginSkeleton\\Handlers\\InitHandler' => __DIR__ . '/../..' . '/src/Handlers/InitHandler.php',
+        'IM\\PluginSkeleton\\PluginSkeletonPlugin' => __DIR__ . '/../..' . '/src/PluginSkeletonPlugin.php',
+        'Interop\\Container\\ContainerInterface' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/ContainerInterface.php',
+        'Interop\\Container\\Exception\\ContainerException' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php',
+        'Interop\\Container\\Exception\\NotFoundException' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/Exception/NotFoundException.php',
+        'League\\Container\\Argument\\ArgumentResolverInterface' => __DIR__ . '/..' . '/league/container/src/Argument/ArgumentResolverInterface.php',
+        'League\\Container\\Argument\\ArgumentResolverTrait' => __DIR__ . '/..' . '/league/container/src/Argument/ArgumentResolverTrait.php',
+        'League\\Container\\Argument\\RawArgument' => __DIR__ . '/..' . '/league/container/src/Argument/RawArgument.php',
+        'League\\Container\\Argument\\RawArgumentInterface' => __DIR__ . '/..' . '/league/container/src/Argument/RawArgumentInterface.php',
+        'League\\Container\\Container' => __DIR__ . '/..' . '/league/container/src/Container.php',
+        'League\\Container\\ContainerAwareInterface' => __DIR__ . '/..' . '/league/container/src/ContainerAwareInterface.php',
+        'League\\Container\\ContainerAwareTrait' => __DIR__ . '/..' . '/league/container/src/ContainerAwareTrait.php',
+        'League\\Container\\ContainerInterface' => __DIR__ . '/..' . '/league/container/src/ContainerInterface.php',
+        'League\\Container\\Definition\\AbstractDefinition' => __DIR__ . '/..' . '/league/container/src/Definition/AbstractDefinition.php',
+        'League\\Container\\Definition\\CallableDefinition' => __DIR__ . '/..' . '/league/container/src/Definition/CallableDefinition.php',
+        'League\\Container\\Definition\\ClassDefinition' => __DIR__ . '/..' . '/league/container/src/Definition/ClassDefinition.php',
+        'League\\Container\\Definition\\ClassDefinitionInterface' => __DIR__ . '/..' . '/league/container/src/Definition/ClassDefinitionInterface.php',
+        'League\\Container\\Definition\\DefinitionFactory' => __DIR__ . '/..' . '/league/container/src/Definition/DefinitionFactory.php',
+        'League\\Container\\Definition\\DefinitionFactoryInterface' => __DIR__ . '/..' . '/league/container/src/Definition/DefinitionFactoryInterface.php',
+        'League\\Container\\Definition\\DefinitionInterface' => __DIR__ . '/..' . '/league/container/src/Definition/DefinitionInterface.php',
+        'League\\Container\\Exception\\NotFoundException' => __DIR__ . '/..' . '/league/container/src/Exception/NotFoundException.php',
+        'League\\Container\\ImmutableContainerAwareInterface' => __DIR__ . '/..' . '/league/container/src/ImmutableContainerAwareInterface.php',
+        'League\\Container\\ImmutableContainerAwareTrait' => __DIR__ . '/..' . '/league/container/src/ImmutableContainerAwareTrait.php',
+        'League\\Container\\ImmutableContainerInterface' => __DIR__ . '/..' . '/league/container/src/ImmutableContainerInterface.php',
+        'League\\Container\\Inflector\\Inflector' => __DIR__ . '/..' . '/league/container/src/Inflector/Inflector.php',
+        'League\\Container\\Inflector\\InflectorAggregate' => __DIR__ . '/..' . '/league/container/src/Inflector/InflectorAggregate.php',
+        'League\\Container\\Inflector\\InflectorAggregateInterface' => __DIR__ . '/..' . '/league/container/src/Inflector/InflectorAggregateInterface.php',
+        'League\\Container\\ReflectionContainer' => __DIR__ . '/..' . '/league/container/src/ReflectionContainer.php',
+        'League\\Container\\ServiceProvider\\AbstractServiceProvider' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/AbstractServiceProvider.php',
+        'League\\Container\\ServiceProvider\\AbstractSignatureServiceProvider' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/AbstractSignatureServiceProvider.php',
+        'League\\Container\\ServiceProvider\\BootableServiceProviderInterface' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/BootableServiceProviderInterface.php',
+        'League\\Container\\ServiceProvider\\ServiceProviderAggregate' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/ServiceProviderAggregate.php',
+        'League\\Container\\ServiceProvider\\ServiceProviderAggregateInterface' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/ServiceProviderAggregateInterface.php',
+        'League\\Container\\ServiceProvider\\ServiceProviderInterface' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/ServiceProviderInterface.php',
+        'League\\Container\\ServiceProvider\\SignatureServiceProviderInterface' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/SignatureServiceProviderInterface.php',
+        'League\\Event\\AbstractEvent' => __DIR__ . '/..' . '/league/event/src/AbstractEvent.php',
+        'League\\Event\\AbstractListener' => __DIR__ . '/..' . '/league/event/src/AbstractListener.php',
+        'League\\Event\\CallbackListener' => __DIR__ . '/..' . '/league/event/src/CallbackListener.php',
+        'League\\Event\\Emitter' => __DIR__ . '/..' . '/league/event/src/Emitter.php',
+        'League\\Event\\EmitterAwareInterface' => __DIR__ . '/..' . '/league/event/src/EmitterAwareInterface.php',
+        'League\\Event\\EmitterAwareTrait' => __DIR__ . '/..' . '/league/event/src/EmitterAwareTrait.php',
+        'League\\Event\\EmitterInterface' => __DIR__ . '/..' . '/league/event/src/EmitterInterface.php',
+        'League\\Event\\EmitterTrait' => __DIR__ . '/..' . '/league/event/src/EmitterTrait.php',
+        'League\\Event\\Event' => __DIR__ . '/..' . '/league/event/src/Event.php',
+        'League\\Event\\EventInterface' => __DIR__ . '/..' . '/league/event/src/EventInterface.php',
+        'League\\Event\\Generator' => __DIR__ . '/..' . '/league/event/src/Generator.php',
+        'League\\Event\\GeneratorInterface' => __DIR__ . '/..' . '/league/event/src/GeneratorInterface.php',
+        'League\\Event\\GeneratorTrait' => __DIR__ . '/..' . '/league/event/src/GeneratorTrait.php',
+        'League\\Event\\ListenerAcceptor' => __DIR__ . '/..' . '/league/event/src/ListenerAcceptor.php',
+        'League\\Event\\ListenerAcceptorInterface' => __DIR__ . '/..' . '/league/event/src/ListenerAcceptorInterface.php',
+        'League\\Event\\ListenerInterface' => __DIR__ . '/..' . '/league/event/src/ListenerInterface.php',
+        'League\\Event\\ListenerProviderInterface' => __DIR__ . '/..' . '/league/event/src/ListenerProviderInterface.php',
+        'League\\Event\\OneTimeListener' => __DIR__ . '/..' . '/league/event/src/OneTimeListener.php',
+        'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
+        'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
+        'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit03e4d0e2ff25903123e8dab1f563b5da::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit03e4d0e2ff25903123e8dab1f563b5da::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitea8eb9f08e5800169a988b0907c289b3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitea8eb9f08e5800169a988b0907c289b3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitea8eb9f08e5800169a988b0907c289b3::$classMap;
 
         }, null, ClassLoader::class);
     }
