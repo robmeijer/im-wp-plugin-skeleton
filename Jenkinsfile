@@ -1,6 +1,8 @@
 #!groovy
 
 node {
+  
+  checkout scm
 
   // Build jobs from branches with '/' have the '/' URL-encoded
   def sanitisedBranchName = (env.BRANCH_NAME).replace("/", "%2F")
