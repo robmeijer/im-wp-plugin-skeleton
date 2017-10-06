@@ -6,9 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'League\\Event\\' => array($vendorDir . '/league/event/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
+    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'League\\Container\\' => array($vendorDir . '/league/container/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
-    'IM\\PluginSkeleton\\' => array($baseDir . '/src'),
-    'IM\\Fabric\\' => array($vendorDir . '/immediate/im-wp-plugin/src'),
+    'IM\\Fabric\\Plugin\\PluginSkeleton\\Test\\' => array($baseDir . '/tests'),
+    'IM\\Fabric\\Plugin\\PluginSkeleton\\' => array($baseDir . '/src'),
+    'IM\\Fabric\\Package\\Plugin\\' => array($vendorDir . '/immediate/im-wp-plugin/src'),
+    'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
+    'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
 );

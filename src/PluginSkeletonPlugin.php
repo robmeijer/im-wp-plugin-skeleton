@@ -1,9 +1,8 @@
 <?php
 
-namespace IM\PluginSkeleton;
+namespace IM\Fabric\Plugin\PluginSkeleton;
 
-use IM\Fabric\WordPressPlugin;
-use IM\PluginSkeleton\Handlers;
+use IM\Fabric\Package\Plugin\WordPressPlugin;
 
 /**
  * Class PluginSkeletonPlugin
@@ -18,7 +17,7 @@ class PluginSkeletonPlugin extends WordPressPlugin
      */
     public function run()
     {
-        $this->addAction('init', $this->get(Handlers\InitHandler::class));
+        $this->addAction(Handler\InitHandler::HOOK, $this->get(Handler\InitHandler::class));
     }
 
     /**
@@ -29,6 +28,6 @@ class PluginSkeletonPlugin extends WordPressPlugin
         // You can optionally register any additional classes or services required by this plugin.
         // This will get executed first before running the plugin.
 
-        $this->add(Handlers\InitHandler::class);
+        $this->add(Handler\InitHandler::class);
     }
 }

@@ -1,11 +1,9 @@
 <?php
 
-namespace IM\Fabric;
+namespace IM\Fabric\Package\Plugin;
 
-use IM\Fabric\Providers\EventServiceProvider;
-use IM\Fabric\Events\WordPressEventEmitter;
+use IM\Fabric\Package\Plugin\Handler\HandlerInterface;
 use League\Container\Container;
-use League\Event\Emitter;
 
 abstract class WordPressPlugin extends Container
 {
@@ -13,10 +11,6 @@ abstract class WordPressPlugin extends Container
     {
         parent::__construct();
 
-        // Register the Event services
-        $this->addServiceProvider(new EventServiceProvider());
-
-        // Register any other services required by the plugin
         $this->boot();
     }
 
@@ -24,27 +18,22 @@ abstract class WordPressPlugin extends Container
      * Wrapper for the WordPress add_action function for hooks
      *
      * @param string $action
-     * @param \League\Event\ListenerInterface|callable $listener
-     * @param int $priority
-     * @return mixed
+     * @param HandlerInterface $handler
      */
-    public function addAction($action, $listener, $priority = Emitter::P_NORMAL)
+    public function addAction($action, HandlerInterface $handler)
     {
-        return $this->get(WordPressEventEmitter::class)->addAction($action, $listener, $priority);
+        add_action($action, [$handler, 'handle'], $handler->priority(), $handler->arguments());
     }
 
     /**
      * Wrapper for the WordPress add_filter function for hooks
      *
      * @param string $filter
-     * @param \League\Event\ListenerInterface|callable $listener
-     * @param int $priority
-     * @param int $args
-     * @return mixed
+     * @param HandlerInterface $handler
      */
-    public function addFilter($filter, $listener, $priority = Emitter::P_NORMAL, $args = 1)
+    public function addFilter($filter, HandlerInterface $handler)
     {
-        return $this->get(WordPressEventEmitter::class)->addFilter($filter, $listener, $priority, $args);
+        add_filter($filter, [$handler, 'handle'], $handler->priority(), $handler->arguments());
     }
 
     /**

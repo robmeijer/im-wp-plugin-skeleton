@@ -18,5 +18,5 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-$plugin = new IM\PluginSkeleton\PluginSkeletonPlugin();
+$plugin = new IM\Fabric\Plugin\PluginSkeleton\PluginSkeletonPlugin();
 $plugin->run();

@@ -5,12 +5,12 @@
     "description": "Plugin description",
     "autoload": {
         "psr-4": {
-            "IM\\PluginSkeleton\\": "src"
+            "IM\\Fabric\\Plugin\\PluginSkeleton\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "IM\\PluginSkeleton\\Test\\": "tests/src"
+            "IM\\Fabric\\Plugin\\PluginSkeleton\\Test\\": "tests/"
         }
     },
     "repositories": [
@@ -20,11 +20,9 @@
         }
     ],
     "require": {
-        "immediate/im-wp-plugin": "^0.4"
+        "immediate/im-wp-plugin": "dev-feature/refactor"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "2.*",
-        "psy/psysh": "~0.6",
-        "phpunit/phpunit": "5.5.*"
+        "phpunit/phpunit": "^5.7"
     }
 }
