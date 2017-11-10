@@ -20,7 +20,8 @@
         }
     ],
     "require": {
-        "immediate/im-wp-plugin": "dev-feature/refactor"
+        "immediate/im-wp-plugin": "dev-feature/refactor",
+        "immediate/im-fabric-wordpress": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7"

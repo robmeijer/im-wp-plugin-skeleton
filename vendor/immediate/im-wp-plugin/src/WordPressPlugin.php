@@ -2,7 +2,6 @@
 
 namespace IM\Fabric\Package\Plugin;
 
-use IM\Fabric\Package\Plugin\Handler\HandlerInterface;
 use League\Container\Container;
 
 abstract class WordPressPlugin extends Container
@@ -12,28 +11,6 @@ abstract class WordPressPlugin extends Container
         parent::__construct();
 
         $this->boot();
-    }
-
-    /**
-     * Wrapper for the WordPress add_action function for hooks
-     *
-     * @param string $action
-     * @param HandlerInterface $handler
-     */
-    public function addAction($action, HandlerInterface $handler)
-    {
-        add_action($action, [$handler, 'handle'], $handler->priority(), $handler->arguments());
-    }
-
-    /**
-     * Wrapper for the WordPress add_filter function for hooks
-     *
-     * @param string $filter
-     * @param HandlerInterface $handler
-     */
-    public function addFilter($filter, HandlerInterface $handler)
-    {
-        add_filter($filter, [$handler, 'handle'], $handler->priority(), $handler->arguments());
     }
 
     /**

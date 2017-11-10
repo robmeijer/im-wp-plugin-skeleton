@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3c722526bbb318eaa1dbd0f9ae265bb",
+    "content-hash": "7cb86bdb3904e1bec55e323ae4db7e5a",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -38,12 +38,32 @@
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
+            "name": "immediate/im-fabric-wordpress",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.immediate.co.uk:RobMeijer/im-fabric-wordpress.git",
+                "reference": "69153fd12f3a72fdb8197a57814da6556fa3291e"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "IM\\Fabric\\Package\\WordPress\\": "src/"
+                }
+            },
+            "license": [
+                "Proprietary"
+            ],
+            "description": "The Immediate Fabric WordPress support package",
+            "time": "2017-11-10T11:21:10+00:00"
+        },
+        {
             "name": "immediate/im-wp-plugin",
             "version": "dev-feature/refactor",
             "source": {
                 "type": "git",
                 "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git",
-                "reference": "b3cf8307c34039190c07b53696e4cd2575dd7537"
+                "reference": "70301d0f61379f47a68c2a78b43bc3d327cb646c"
             },
             "require": {
                 "league/container": "^2.4",
@@ -76,7 +96,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-10-06T15:52:22+00:00"
+            "time": "2017-11-10T11:24:56+00:00"
         },
         {
             "name": "league/container",
@@ -250,37 +270,40 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "doctrine/collections": "1.*",
-                "phpunit/phpunit": "~4.1"
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^4.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
-                }
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Create deep copies (clones) of your objects",
-            "homepage": "https://github.com/myclabs/DeepCopy",
             "keywords": [
                 "clone",
                 "copy",
@@ -288,7 +311,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-04-12T18:52:22+00:00"
+            "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -750,16 +773,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.22",
+            "version": "5.7.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "10df877596c9906d4110b5b905313829043f2ada"
+                "reference": "78532d5269d984660080d8e0f4c99c5c2ea65ffe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/10df877596c9906d4110b5b905313829043f2ada",
-                "reference": "10df877596c9906d4110b5b905313829043f2ada",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/78532d5269d984660080d8e0f4c99c5c2ea65ffe",
+                "reference": "78532d5269d984660080d8e0f4c99c5c2ea65ffe",
                 "shasum": ""
             },
             "require": {
@@ -828,7 +851,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-09-24T07:23:38+00:00"
+            "time": "2017-10-15T06:13:55+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1511,7 +1534,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "immediate/im-wp-plugin": 20
+        "immediate/im-wp-plugin": 20,
+        "immediate/im-fabric-wordpress": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

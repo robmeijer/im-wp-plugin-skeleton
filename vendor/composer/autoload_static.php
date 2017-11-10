@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit321eb9b1bbf5ddc5a9ec6aa60d45f07d
+class ComposerStaticInitd64077b1fc9154c75700215f2fe542ba
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -19,6 +19,7 @@ class ComposerStaticInit321eb9b1bbf5ddc5a9ec6aa60d45f07d
         array (
             'Interop\\Container\\' => 18,
             'IM\\Fabric\\Plugin\\PluginSkeleton\\' => 32,
+            'IM\\Fabric\\Package\\WordPress\\' => 28,
             'IM\\Fabric\\Package\\Plugin\\' => 25,
         ),
     );
@@ -40,6 +41,10 @@ class ComposerStaticInit321eb9b1bbf5ddc5a9ec6aa60d45f07d
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
+        'IM\\Fabric\\Package\\WordPress\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src',
+        ),
         'IM\\Fabric\\Package\\Plugin\\' => 
         array (
             0 => __DIR__ . '/..' . '/immediate/im-wp-plugin/src',
@@ -47,10 +52,12 @@ class ComposerStaticInit321eb9b1bbf5ddc5a9ec6aa60d45f07d
     );
 
     public static $classMap = array (
-        'IM\\Fabric\\Package\\Plugin\\Handler\\AbstractHandler' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Handler/AbstractHandler.php',
-        'IM\\Fabric\\Package\\Plugin\\Handler\\HandlerInterface' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Handler/HandlerInterface.php',
         'IM\\Fabric\\Package\\Plugin\\WordPressPlugin' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressPlugin.php',
-        'IM\\Fabric\\Plugin\\PluginSkeleton\\Handler\\InitHandler' => __DIR__ . '/../..' . '/src/Handler/InitHandler.php',
+        'IM\\Fabric\\Package\\WordPress\\Action' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Action.php',
+        'IM\\Fabric\\Package\\WordPress\\Filter' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Filter.php',
+        'IM\\Fabric\\Package\\WordPress\\Hook' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Hook.php',
+        'IM\\Fabric\\Package\\WordPress\\WordPress' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/WordPress.php',
+        'IM\\Fabric\\Plugin\\PluginSkeleton\\Action\\InitAction' => __DIR__ . '/../..' . '/src/Action/InitAction.php',
         'IM\\Fabric\\Plugin\\PluginSkeleton\\PluginSkeletonPlugin' => __DIR__ . '/../..' . '/src/PluginSkeletonPlugin.php',
         'Interop\\Container\\ContainerInterface' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/ContainerInterface.php',
         'Interop\\Container\\Exception\\ContainerException' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php',
@@ -93,9 +100,9 @@ class ComposerStaticInit321eb9b1bbf5ddc5a9ec6aa60d45f07d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit321eb9b1bbf5ddc5a9ec6aa60d45f07d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit321eb9b1bbf5ddc5a9ec6aa60d45f07d::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit321eb9b1bbf5ddc5a9ec6aa60d45f07d::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd64077b1fc9154c75700215f2fe542ba::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd64077b1fc9154c75700215f2fe542ba::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd64077b1fc9154c75700215f2fe542ba::$classMap;
 
         }, null, ClassLoader::class);
     }
