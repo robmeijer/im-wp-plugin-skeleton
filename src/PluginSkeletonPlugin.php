@@ -15,7 +15,8 @@ class PluginSkeletonPlugin extends WordPressPlugin
     const PLUGIN_ID = 'im-plugin-skeleton';
 
     /**
-     * Define all your actions and WP hooks
+     * The 'run' method is the core of the plugin functionality
+     * It acts as a "Controller Action" method
      */
     public function run()
     {
@@ -24,12 +25,10 @@ class PluginSkeletonPlugin extends WordPressPlugin
 
     /**
      * Register any other services required by the plugin
+     * This method gets executed first
      */
     protected function boot()
     {
-        // You can optionally register any additional classes or services required by this plugin.
-        // This will get executed first before running the plugin.
-
         $this->add(WordPress::class);
         $this->add(Action\InitAction::class);
     }
