@@ -16,12 +16,12 @@ Replace `PluginSkeleton` with the namespace of the service your plugin will prov
 
 "autoload": {
     "psr-4": {
-        "IM\\PluginSkeleton\\":"src"
+        "IM\\Fabric\\Plugin\\PluginSkeleton\\":"src"
     }
 },
 "autoload-dev": {
     "psr-4": {
-        "IM\\PluginSkeleton\\Test\\":"tests/src"
+        "IM\\Fabric\\Plugin\\PluginSkeleton\\Test\\":"tests/src"
     }
 },
 ```
@@ -35,11 +35,11 @@ The plugin metadata needs to be updated to match your new plugin.
 
 ##### Plugin Initialisation
 ```php
-$plugin = new IM\PluginSkeleton\PluginSkeletonPlugin();
+$plugin = new IM\Fabric\Plugin\PluginSkeleton\PluginSkeletonPlugin();
 ```
 
 ### Plugin Class
-The main plugin class is located in `/src`, and is typically named `<Service>Plugin` with the namespace `IM\<Service>`, e.g. `IM\Subscriptions\SubscriptionsPlugin`. The file name should be the same as the class name, e.g. `SubscriptionsPlugin.php`.
+The main plugin class is located in `/src`, and is typically named `<Service>Plugin` with the namespace `IM\Fabric\Plugin\<Service>\<Service>Plugin`, e.g. `IM\Fabric\Plugin\Subscriptions\SubscriptionsPlugin`. The file name should be the same as the class name, e.g. `SubscriptionsPlugin.php`.
    
 Please refer to [www.php-fig.org/psr/psr-4](http://www.php-fig.org/psr/psr-4) for more information.
 
@@ -51,9 +51,9 @@ When starting fresh with a new plugin, you first need to delete the existing `.g
 #### Composer
 In order to update your local dependencies, you need to run `composer update`. This will update your `composer.lock` file which also needs to be committed.
 
-#### Handlers
-The handlers are dedicated classes used to handle your WP hooks. These should be located in `/src/Handlers` with the namespace `IM\<Service>\Handlers` e.g. `IM\Subscriptions\Handlers`.
-The handler classes should be added to the container in your Plugin class, and also resolved out of the container, to make use of dependency injection.
+#### Actions
+The actions are dedicated classes that should be triggered for your WP hooks. These should be located in `/src/Action` with the namespace `IM\Fabric\Plugin\<Service>\Action` e.g. `IM\Fabric\Plugin\Subscriptions\Action`.
+The action classes should be added to the container in your Plugin class, and also resolved out of the container, to make use of dependency injection.
 
 #### Services
 Any service classes you use should ideally be added to the plugin container, together with their dependencies. This is done in the plugin class's `boot()` method.
