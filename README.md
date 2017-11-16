@@ -16,12 +16,12 @@ Replace `PluginSkeleton` with the namespace of the service your plugin will prov
 
 "autoload": {
     "psr-4": {
-        "IM\\Fabric\\Plugin\\PluginSkeleton\\":"src"
+        "IM\\Fabric\\Plugin\\PluginSkeleton\\":"src/"
     }
 },
 "autoload-dev": {
     "psr-4": {
-        "IM\\Fabric\\Plugin\\PluginSkeleton\\Test\\":"tests/src"
+        "IM\\Fabric\\Plugin\\PluginSkeleton\\Test\\":"tests/"
     }
 },
 ```
@@ -49,11 +49,11 @@ Please refer to [www.php-fig.org/psr/psr-4](http://www.php-fig.org/psr/psr-4) fo
 When starting fresh with a new plugin, you first need to delete the existing `.git` directory, and initialise a new repository using `git init`.
 
 #### Composer
-In order to update your local dependencies, you need to run `composer update`. This will update your `composer.lock` file which also needs to be committed.
+In order to install your local dependencies, you need to run `composer install -o`. This will update your `composer.lock` file with the installed dependencies, as well as optimise the autoloader. Make sure that the `composer.lock` file is committed.
 
 #### Actions
-The actions are dedicated classes that should be triggered for your WP hooks. These should be located in `/src/Action` with the namespace `IM\Fabric\Plugin\<Service>\Action` e.g. `IM\Fabric\Plugin\Subscriptions\Action`.
-The action classes should be added to the container in your Plugin class, and also resolved out of the container, to make use of dependency injection.
+The actions are dedicated classes that should be triggered for your WP action hooks. These should be located in `/src/Action` with the namespace `IM\Fabric\Plugin\<Service>\Action` e.g. `IM\Fabric\Plugin\Subscriptions\Action`.
+Each action should extend `IM\Fabric\Package\WordPress\Action`, which requires a public method called `action()`. The action classes should be added to the container in your Plugin class, and also be resolved out of the container, to make use of dependency injection.
 
 #### Filters
 The filters are almost identical to the actions, and are dedicated classes that should be triggered for your WP hooks that support filters. These should be located in `/src/Filter` with the namespace `IM\Fabric\Plugin\<Service>\Filter` e.g. `IM\Fabric\Plugin\Subscriptions\Filter`.

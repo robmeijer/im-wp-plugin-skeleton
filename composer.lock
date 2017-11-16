@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cb86bdb3904e1bec55e323ae4db7e5a",
+    "content-hash": "49b90de3932ca370dde6f423328be959",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -43,7 +43,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.immediate.co.uk:RobMeijer/im-fabric-wordpress.git",
-                "reference": "69153fd12f3a72fdb8197a57814da6556fa3291e"
+                "reference": "a4aa7def9baa5f9302aec34fd2e78d8ef4c3d7ae"
             },
             "type": "library",
             "autoload": {
@@ -55,7 +55,7 @@
                 "Proprietary"
             ],
             "description": "The Immediate Fabric WordPress support package",
-            "time": "2017-11-10T11:21:10+00:00"
+            "time": "2017-11-13T11:35:46+00:00"
         },
         {
             "name": "immediate/im-wp-plugin",
@@ -63,9 +63,10 @@
             "source": {
                 "type": "git",
                 "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git",
-                "reference": "70301d0f61379f47a68c2a78b43bc3d327cb646c"
+                "reference": "d5b2dc0ff615518db10c105ac4d1fc8b30665ac5"
             },
             "require": {
+                "immediate/im-fabric-wordpress": "dev-master",
                 "league/container": "^2.4",
                 "php": ">=5.6"
             },
@@ -86,17 +87,11 @@
             "license": [
                 "Proprietary"
             ],
-            "authors": [
-                {
-                    "name": "Rob Meijer",
-                    "email": "rob.meijer@immediate.co.uk"
-                }
-            ],
             "description": "A WordPress plugin base package",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-11-10T11:24:56+00:00"
+            "time": "2017-11-16T16:21:54+00:00"
         },
         {
             "name": "league/container",
@@ -773,16 +768,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.23",
+            "version": "5.7.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "78532d5269d984660080d8e0f4c99c5c2ea65ffe"
+                "reference": "4b1c822a68ae6577df38a59eb49b046712ec0f6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/78532d5269d984660080d8e0f4c99c5c2ea65ffe",
-                "reference": "78532d5269d984660080d8e0f4c99c5c2ea65ffe",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4b1c822a68ae6577df38a59eb49b046712ec0f6a",
+                "reference": "4b1c822a68ae6577df38a59eb49b046712ec0f6a",
                 "shasum": ""
             },
             "require": {
@@ -807,7 +802,7 @@
                 "sebastian/object-enumerator": "~2.0",
                 "sebastian/resource-operations": "~1.0",
                 "sebastian/version": "~1.0.3|~2.0",
-                "symfony/yaml": "~2.1|~3.0"
+                "symfony/yaml": "~2.1|~3.0|~4.0"
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "3.0.2"
@@ -851,7 +846,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-10-15T06:13:55+00:00"
+            "time": "2017-11-14T14:50:51+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1427,16 +1422,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.3.10",
+            "version": "v3.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "8c7bf1e7d5d6b05a690b715729cb4cd0c0a99c46"
+                "reference": "0938408c4faa518d95230deabb5f595bf0de31b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/8c7bf1e7d5d6b05a690b715729cb4cd0c0a99c46",
-                "reference": "8c7bf1e7d5d6b05a690b715729cb4cd0c0a99c46",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0938408c4faa518d95230deabb5f595bf0de31b9",
+                "reference": "0938408c4faa518d95230deabb5f595bf0de31b9",
                 "shasum": ""
             },
             "require": {
@@ -1478,7 +1473,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-10-05T14:43:42+00:00"
+            "time": "2017-11-10T18:26:04+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -1539,6 +1534,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.6"
+    },
     "platform-dev": []
 }

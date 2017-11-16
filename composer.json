@@ -13,13 +13,8 @@
             "IM\\Fabric\\Plugin\\PluginSkeleton\\Test\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git"
-        }
-    ],
     "require": {
+        "php": ">=5.6",
         "immediate/im-wp-plugin": "dev-feature/refactor",
         "immediate/im-fabric-wordpress": "dev-master"
     },

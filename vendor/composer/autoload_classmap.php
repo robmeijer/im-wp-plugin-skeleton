@@ -6,12 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'IM\\Fabric\\Package\\Plugin\\WordPressAware' => $vendorDir . '/immediate/im-wp-plugin/src/WordPressAware.php',
     'IM\\Fabric\\Package\\Plugin\\WordPressPlugin' => $vendorDir . '/immediate/im-wp-plugin/src/WordPressPlugin.php',
     'IM\\Fabric\\Package\\WordPress\\Action' => $vendorDir . '/immediate/im-fabric-wordpress/src/Action.php',
     'IM\\Fabric\\Package\\WordPress\\Filter' => $vendorDir . '/immediate/im-fabric-wordpress/src/Filter.php',
     'IM\\Fabric\\Package\\WordPress\\Hook' => $vendorDir . '/immediate/im-fabric-wordpress/src/Hook.php',
     'IM\\Fabric\\Package\\WordPress\\WordPress' => $vendorDir . '/immediate/im-fabric-wordpress/src/WordPress.php',
-    'IM\\Fabric\\Plugin\\PluginSkeleton\\Action\\InitAction' => $baseDir . '/src/Action/InitAction.php',
+    'IM\\Fabric\\Plugin\\PluginSkeleton\\Action\\DoSomething' => $baseDir . '/src/Action/DoSomething.php',
+    'IM\\Fabric\\Plugin\\PluginSkeleton\\Filter\\ChangeSomething' => $baseDir . '/src/Filter/ChangeSomething.php',
     'IM\\Fabric\\Plugin\\PluginSkeleton\\PluginSkeletonPlugin' => $baseDir . '/src/PluginSkeletonPlugin.php',
     'Interop\\Container\\ContainerInterface' => $vendorDir . '/container-interop/container-interop/src/Interop/Container/ContainerInterface.php',
     'Interop\\Container\\Exception\\ContainerException' => $vendorDir . '/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php',

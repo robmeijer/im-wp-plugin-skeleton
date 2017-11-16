@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd64077b1fc9154c75700215f2fe542ba
+class ComposerStaticInit12d86ed284433fcf5321bec60d088cc2
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -52,12 +52,14 @@ class ComposerStaticInitd64077b1fc9154c75700215f2fe542ba
     );
 
     public static $classMap = array (
+        'IM\\Fabric\\Package\\Plugin\\WordPressAware' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressAware.php',
         'IM\\Fabric\\Package\\Plugin\\WordPressPlugin' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressPlugin.php',
         'IM\\Fabric\\Package\\WordPress\\Action' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Action.php',
         'IM\\Fabric\\Package\\WordPress\\Filter' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Filter.php',
         'IM\\Fabric\\Package\\WordPress\\Hook' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Hook.php',
         'IM\\Fabric\\Package\\WordPress\\WordPress' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/WordPress.php',
-        'IM\\Fabric\\Plugin\\PluginSkeleton\\Action\\InitAction' => __DIR__ . '/../..' . '/src/Action/InitAction.php',
+        'IM\\Fabric\\Plugin\\PluginSkeleton\\Action\\DoSomething' => __DIR__ . '/../..' . '/src/Action/DoSomething.php',
+        'IM\\Fabric\\Plugin\\PluginSkeleton\\Filter\\ChangeSomething' => __DIR__ . '/../..' . '/src/Filter/ChangeSomething.php',
         'IM\\Fabric\\Plugin\\PluginSkeleton\\PluginSkeletonPlugin' => __DIR__ . '/../..' . '/src/PluginSkeletonPlugin.php',
         'Interop\\Container\\ContainerInterface' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/ContainerInterface.php',
         'Interop\\Container\\Exception\\ContainerException' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php',
@@ -100,9 +102,9 @@ class ComposerStaticInitd64077b1fc9154c75700215f2fe542ba
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd64077b1fc9154c75700215f2fe542ba::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd64077b1fc9154c75700215f2fe542ba::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd64077b1fc9154c75700215f2fe542ba::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit12d86ed284433fcf5321bec60d088cc2::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit12d86ed284433fcf5321bec60d088cc2::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit12d86ed284433fcf5321bec60d088cc2::$classMap;
 
         }, null, ClassLoader::class);
     }
