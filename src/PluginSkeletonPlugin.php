@@ -19,8 +19,8 @@ class PluginSkeletonPlugin extends WordPressPlugin
      */
     public function run()
     {
-        $this->addAction(Hook::INIT, $this->get(Action\DoSomething::class));
-        $this->addFilter(Hook::INIT, $this->get(Filter\ChangeSomething::class));
+        $this->addAction($this->get(Hook\Init::class), $this->get(Action\DoSomething::class));
+        $this->addFilter($this->get(Hook\Init::class), $this->get(Filter\ChangeSomething::class));
     }
 
     /**
@@ -29,7 +29,5 @@ class PluginSkeletonPlugin extends WordPressPlugin
      */
     protected function boot()
     {
-        $this->add(Action\DoSomething::class);
-        $this->add(Filter\ChangeSomething::class);
     }
 }

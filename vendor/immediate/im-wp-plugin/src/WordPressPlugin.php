@@ -2,8 +2,8 @@
 
 namespace IM\Fabric\Package\Plugin;
 
-use IM\Fabric\Package\WordPress\WordPress;
 use League\Container\Container;
+use League\Container\ReflectionContainer;
 
 abstract class WordPressPlugin extends Container
 {
@@ -13,7 +13,8 @@ abstract class WordPressPlugin extends Container
     {
         parent::__construct();
 
-        $this->add(WordPress::class);
+        // Enable auto-wiring in the container
+        $this->delegate(new ReflectionContainer());
 
         $this->boot();
     }

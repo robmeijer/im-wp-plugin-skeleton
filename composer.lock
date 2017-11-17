@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "49b90de3932ca370dde6f423328be959",
+    "content-hash": "c7f34eb3c2b8f7c4f0040859ba4b35e6",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -43,7 +43,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.immediate.co.uk:RobMeijer/im-fabric-wordpress.git",
-                "reference": "a4aa7def9baa5f9302aec34fd2e78d8ef4c3d7ae"
+                "reference": "bb94283d5c68ae59c562f1a5acb5dc4f18cda255"
             },
             "type": "library",
             "autoload": {
@@ -55,7 +55,7 @@
                 "Proprietary"
             ],
             "description": "The Immediate Fabric WordPress support package",
-            "time": "2017-11-13T11:35:46+00:00"
+            "time": "2017-11-16T17:53:46+00:00"
         },
         {
             "name": "immediate/im-wp-plugin",
@@ -63,7 +63,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git",
-                "reference": "d5b2dc0ff615518db10c105ac4d1fc8b30665ac5"
+                "reference": "b4a722b1df88db8aeded39f95bcc0d1c4c869ec1"
             },
             "require": {
                 "immediate/im-fabric-wordpress": "dev-master",
@@ -91,7 +91,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-11-16T16:21:54+00:00"
+            "time": "2017-11-17T10:34:49+00:00"
         },
         {
             "name": "league/container",
@@ -1422,7 +1422,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.3.12",
+            "version": "v3.3.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
