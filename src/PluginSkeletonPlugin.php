@@ -4,10 +4,6 @@ namespace IM\Fabric\Plugin\PluginSkeleton;
 
 use IM\Fabric\Package\Plugin\WordPressPlugin;
 
-/**
- * Class PluginSkeletonPlugin
- * @package IM\PluginSkeleton
- */
 class PluginSkeletonPlugin extends WordPressPlugin
 {
     const PLUGIN_ID = 'im-plugin-skeleton';
