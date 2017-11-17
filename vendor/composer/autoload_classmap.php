@@ -41,8 +41,6 @@ return array(
     'IM\\Fabric\\Package\\Plugin\\WordPressPlugin' => $vendorDir . '/immediate/im-wp-plugin/src/WordPressPlugin.php',
     'IM\\Fabric\\Package\\WordPress\\Action' => $vendorDir . '/immediate/im-fabric-wordpress/src/Action.php',
     'IM\\Fabric\\Package\\WordPress\\Filter' => $vendorDir . '/immediate/im-fabric-wordpress/src/Filter.php',
-    'IM\\Fabric\\Package\\WordPress\\Hook' => $vendorDir . '/immediate/im-fabric-wordpress/src/Hook.php',
-    'IM\\Fabric\\Package\\WordPress\\Hook\\Init' => $vendorDir . '/immediate/im-fabric-wordpress/src/Hook/Init.php',
     'IM\\Fabric\\Package\\WordPress\\WordPress' => $vendorDir . '/immediate/im-fabric-wordpress/src/WordPress.php',
     'IM\\Fabric\\Plugin\\PluginSkeleton\\Action\\DoSomething' => $baseDir . '/src/Action/DoSomething.php',
     'IM\\Fabric\\Plugin\\PluginSkeleton\\Filter\\ChangeSomething' => $baseDir . '/src/Filter/ChangeSomething.php',

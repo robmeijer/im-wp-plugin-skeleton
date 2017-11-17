@@ -1,27 +1,5 @@
 [
     {
-        "name": "immediate/im-fabric-wordpress",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "git@github.immediate.co.uk:RobMeijer/im-fabric-wordpress.git",
-            "reference": "bb94283d5c68ae59c562f1a5acb5dc4f18cda255"
-        },
-        "time": "2017-11-16T17:53:46+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "IM\\Fabric\\Package\\WordPress\\": "src/"
-            }
-        },
-        "license": [
-            "Proprietary"
-        ],
-        "description": "The Immediate Fabric WordPress support package"
-    },
-    {
         "name": "psr/container",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",
@@ -170,44 +148,6 @@
             "league",
             "provider",
             "service"
-        ]
-    },
-    {
-        "name": "immediate/im-wp-plugin",
-        "version": "dev-feature/refactor",
-        "version_normalized": "dev-feature/refactor",
-        "source": {
-            "type": "git",
-            "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git",
-            "reference": "b4a722b1df88db8aeded39f95bcc0d1c4c869ec1"
-        },
-        "require": {
-            "immediate/im-fabric-wordpress": "dev-master",
-            "league/container": "^2.4",
-            "php": ">=5.6"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^5.7"
-        },
-        "time": "2017-11-17T10:34:49+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "IM\\Fabric\\Package\\Plugin\\": "src/"
-            }
-        },
-        "autoload-dev": {
-            "psr-4": {
-                "IM\\Fabric\\Package\\Plugin\\Test\\": "tests/"
-            }
-        },
-        "license": [
-            "Proprietary"
-        ],
-        "description": "A WordPress plugin base package",
-        "keywords": [
-            "wordpress"
         ]
     },
     {
@@ -1574,6 +1514,66 @@
             "phpunit",
             "testing",
             "xunit"
+        ]
+    },
+    {
+        "name": "immediate/im-fabric-wordpress",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "git@github.immediate.co.uk:RobMeijer/im-fabric-wordpress.git",
+            "reference": "0fffeb041f8caf04ce206a630f13768f4eaf5e7a"
+        },
+        "time": "2017-11-17T14:57:39+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "IM\\Fabric\\Package\\WordPress\\": "src/"
+            }
+        },
+        "license": [
+            "Proprietary"
+        ],
+        "description": "The Immediate Fabric WordPress support package"
+    },
+    {
+        "name": "immediate/im-wp-plugin",
+        "version": "dev-feature/refactor",
+        "version_normalized": "dev-feature/refactor",
+        "source": {
+            "type": "git",
+            "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git",
+            "reference": "2358932f7e43468206b4a1f093081a8862f83545"
+        },
+        "require": {
+            "immediate/im-fabric-wordpress": "dev-master",
+            "league/container": "^2.4",
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.7"
+        },
+        "time": "2017-11-17T14:59:54+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "IM\\Fabric\\Package\\Plugin\\": "src/"
+            }
+        },
+        "autoload-dev": {
+            "psr-4": {
+                "IM\\Fabric\\Package\\Plugin\\Test\\": "tests/"
+            }
+        },
+        "license": [
+            "Proprietary"
+        ],
+        "description": "A WordPress plugin base package",
+        "keywords": [
+            "wordpress"
         ]
     }
 ]

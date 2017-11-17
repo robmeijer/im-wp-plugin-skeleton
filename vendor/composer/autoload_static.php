@@ -145,8 +145,6 @@ class ComposerStaticInit7f74e61517c27d09d335646f961791e5
         'IM\\Fabric\\Package\\Plugin\\WordPressPlugin' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressPlugin.php',
         'IM\\Fabric\\Package\\WordPress\\Action' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Action.php',
         'IM\\Fabric\\Package\\WordPress\\Filter' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Filter.php',
-        'IM\\Fabric\\Package\\WordPress\\Hook' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Hook.php',
-        'IM\\Fabric\\Package\\WordPress\\Hook\\Init' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Hook/Init.php',
         'IM\\Fabric\\Package\\WordPress\\WordPress' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/WordPress.php',
         'IM\\Fabric\\Plugin\\PluginSkeleton\\Action\\DoSomething' => __DIR__ . '/../..' . '/src/Action/DoSomething.php',
         'IM\\Fabric\\Plugin\\PluginSkeleton\\Filter\\ChangeSomething' => __DIR__ . '/../..' . '/src/Filter/ChangeSomething.php',

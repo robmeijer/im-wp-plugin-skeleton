@@ -3,7 +3,6 @@
 namespace IM\Fabric\Plugin\PluginSkeleton;
 
 use IM\Fabric\Package\Plugin\WordPressPlugin;
-use IM\Fabric\Package\WordPress\Hook;
 
 /**
  * Class PluginSkeletonPlugin
@@ -19,8 +18,8 @@ class PluginSkeletonPlugin extends WordPressPlugin
      */
     public function run()
     {
-        $this->addAction($this->get(Hook\Init::class), $this->get(Action\DoSomething::class));
-        $this->addFilter($this->get(Hook\Init::class), $this->get(Filter\ChangeSomething::class));
+        $this->addAction('init', $this->get(Action\DoSomething::class));
+        $this->addFilter('init', $this->get(Filter\ChangeSomething::class));
     }
 
     /**
