@@ -14,15 +14,7 @@ class PluginSkeletonPlugin extends WordPressPlugin
      */
     public function run()
     {
-        $this->addAction('init', $this->get(Action\DoSomething::class));
-        $this->addFilter('init', $this->get(Filter\ChangeSomething::class));
-    }
-
-    /**
-     * Register any other services required by the plugin
-     * This method gets executed first
-     */
-    protected function boot()
-    {
+        $this->wp->addAction('init', $this->get(Action\DoSomething::class));
+        $this->wp->addFilter('init', $this->get(Filter\ChangeSomething::class));
     }
 }

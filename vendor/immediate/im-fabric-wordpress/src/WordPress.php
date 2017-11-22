@@ -25,4 +25,22 @@ class WordPress
     {
         add_filter($hook, [$filter, 'filter'], $filter->priority(), $filter->arguments());
     }
+
+    /**
+     * @param string $path
+     * @param callable $callable
+     */
+    public function registerActivationHook($path, $callable)
+    {
+        register_activation_hook($path, $callable);
+    }
+
+    /**
+     * @param string $path
+     * @param callable $callable
+     */
+    public function registerDeactivationHook($path, $callable)
+    {
+        register_deactivation_hook($path, $callable);
+    }
 }

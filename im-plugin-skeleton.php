@@ -8,7 +8,8 @@
  * Author URI: http://www.immediate.co.uk
  * License: GPL v2
  */
-if (!defined('ABSPATH')) {
+
+if (! defined('ABSPATH')) {
     return;
 }
 
@@ -18,5 +19,5 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-$plugin = new IM\Fabric\Plugin\PluginSkeleton\PluginSkeletonPlugin();
+$plugin = new IM\Fabric\Plugin\PluginSkeleton\PluginSkeletonPlugin(__FILE__);
 $plugin->run();

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3408281c51743782905cc0842d5877dd",
+    "content-hash": "6dddcb39e4213b82ba21789d232dc7de",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -43,7 +43,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.immediate.co.uk:RobMeijer/im-fabric-wordpress.git",
-                "reference": "a4aa7def9baa5f9302aec34fd2e78d8ef4c3d7ae"
+                "reference": "0b2c68ec850105504dc2ed0d29127f3d73f6f4c2"
             },
             "type": "library",
             "autoload": {
@@ -55,7 +55,7 @@
                 "Proprietary"
             ],
             "description": "The Immediate Fabric WordPress support package",
-            "time": "2017-11-13T11:35:46+00:00"
+            "time": "2017-11-22T11:46:50+00:00"
         },
         {
             "name": "league/container",
@@ -1386,7 +1386,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.3.12",
+            "version": "v3.3.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
