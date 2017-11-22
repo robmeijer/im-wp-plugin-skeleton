@@ -1,5 +1,27 @@
 [
     {
+        "name": "immediate/im-fabric-wordpress",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "git@github.immediate.co.uk:WCP-Packages/im-fabric-wordpress.git",
+            "reference": "0b2c68ec850105504dc2ed0d29127f3d73f6f4c2"
+        },
+        "time": "2017-11-22T11:46:50+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "IM\\Fabric\\Package\\WordPress\\": "src/"
+            }
+        },
+        "license": [
+            "Proprietary"
+        ],
+        "description": "The Immediate Fabric WordPress support package"
+    },
+    {
         "name": "psr/container",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",
@@ -151,45 +173,23 @@
         ]
     },
     {
-        "name": "immediate/im-fabric-wordpress",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "git@github.immediate.co.uk:RobMeijer/im-fabric-wordpress.git",
-            "reference": "0b2c68ec850105504dc2ed0d29127f3d73f6f4c2"
-        },
-        "time": "2017-11-22T11:46:50+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "IM\\Fabric\\Package\\WordPress\\": "src/"
-            }
-        },
-        "license": [
-            "Proprietary"
-        ],
-        "description": "The Immediate Fabric WordPress support package"
-    },
-    {
         "name": "immediate/im-wp-plugin",
         "version": "dev-feature/refactor",
         "version_normalized": "dev-feature/refactor",
         "source": {
             "type": "git",
-            "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git",
-            "reference": "97d3c2dbe03fcda203dbaba0dda1c44195922eeb"
+            "url": "git@github.immediate.co.uk:WCP-Packages/im-wp-plugin.git",
+            "reference": "3b2efe964b434492e11bc4c97bfbb22f8e83f50d"
         },
         "require": {
-            "immediate/im-fabric-wordpress": "dev-master",
+            "immediate/im-fabric-wordpress": "^1.0",
             "league/container": "^2.4",
             "php": ">=5.6"
         },
         "require-dev": {
             "phpunit/phpunit": "^5.7"
         },
-        "time": "2017-11-22T12:42:55+00:00",
+        "time": "2017-11-22T15:01:52+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {

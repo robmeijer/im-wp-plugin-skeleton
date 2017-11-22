@@ -17,13 +17,13 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.immediate.co.uk:RobMeijer/im-fabric-wordpress.git"
+            "url": "git@github.immediate.co.uk:WCP-Packages/im-fabric-wordpress.git"
         }
     ],
     "require": {
         "php": ">=5.6",
         "league/container": "^2.4",
-        "immediate/im-fabric-wordpress": "dev-master"
+        "immediate/im-fabric-wordpress": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7"
