@@ -19,5 +19,14 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
+// The following lines of code allows you to specify a local '/views' directory
+// Uncomment these lines if you wish to include views in the plugin
+
+// if (! class_exists(\Timber\Timber::class)) {
+//    return;
+// }
+//
+// \Timber\Timber::$locations[] = __DIR__ . '/views';
+
 $plugin = new IM\Fabric\Plugin\PluginSkeleton\PluginSkeletonPlugin(__FILE__);
 $plugin->run();
