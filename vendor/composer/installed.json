@@ -179,7 +179,7 @@
         "source": {
             "type": "git",
             "url": "git@github.immediate.co.uk:WCP-Packages/im-wp-plugin.git",
-            "reference": "3b2efe964b434492e11bc4c97bfbb22f8e83f50d"
+            "reference": "d8ccf173ee986623a91e34d83dc17ecb626eea34"
         },
         "require": {
             "immediate/im-fabric-wordpress": "^1.0",
@@ -189,7 +189,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.7"
         },
-        "time": "2017-11-22T15:01:52+00:00",
+        "time": "2017-11-22T16:42:45+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {

@@ -10,21 +10,9 @@ abstract class WordPressPlugin extends Container
 {
     use WordPressAware;
 
-    /**
-     * @var string
-     */
-    protected $path;
-
-    /**
-     * WordPressPlugin constructor.
-     *
-     * @param string $path
-     */
-    public function __construct($path)
+    public function __construct()
     {
         parent::__construct();
-
-        $this->path = $path;
 
         // Enable auto-wiring in the container
         $this->delegate(new ReflectionContainer());
@@ -38,16 +26,10 @@ abstract class WordPressPlugin extends Container
 
         // Execute any code that's required before activating the plugin
         $this->boot();
-
-        // Register the activation and deactivation hooks
-        $this->wp->registerActivationHook($this->path, [$this, 'activate']);
-        $this->wp->registerDeactivationHook($this->path, [$this, 'deactivate']);
     }
 
     /**
      * Define all your actions and WP hooks
-     *
-     * @return mixed
      */
     abstract public function run();
 

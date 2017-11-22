@@ -12,6 +12,14 @@ trait WordPressAware
     protected $wp;
 
     /**
+     * @return WordPress
+     */
+    public function wp()
+    {
+        return $this->wp;
+    }
+
+    /**
      * @param WordPress $wp
      */
     public function setWordPress(WordPress $wp)
