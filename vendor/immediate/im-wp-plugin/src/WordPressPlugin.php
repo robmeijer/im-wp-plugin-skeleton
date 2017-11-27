@@ -1,58 +1,47 @@
 <?php
 
-namespace IM\Fabric;
+namespace IM\Fabric\Package\Plugin;
 
-use IM\Fabric\Providers\EventServiceProvider;
-use IM\Fabric\Events\WordPressEventEmitter;
+use IM\Fabric\Package\WordPress\WordPress;
 use League\Container\Container;
-use League\Event\Emitter;
+use League\Container\ReflectionContainer;
 
 abstract class WordPressPlugin extends Container
 {
+    use WordPressAware;
+
     public function __construct()
     {
         parent::__construct();
 
-        // Register the Event services
-        $this->addServiceProvider(new EventServiceProvider());
+        // Enable auto-wiring in the container
+        $this->delegate(new ReflectionContainer());
 
-        // Register any other services required by the plugin
+        // Use inflection to inject WordPress dependency through method injection
+        $this->inflector(WordPressAwareInterface::class)
+             ->invokeMethod('setWordPress', [WordPress::class]);
+
+        // Add WordPress
+        $this->wp = $this->get(WordPress::class);
+
+        // Execute any code that's required before activating the plugin
         $this->boot();
     }
 
     /**
-     * Wrapper for the WordPress add_action function for hooks
-     *
-     * @param string $action
-     * @param \League\Event\ListenerInterface|callable $listener
-     * @param int $priority
-     * @return mixed
-     */
-    public function addAction($action, $listener, $priority = Emitter::P_NORMAL)
-    {
-        return $this->get(WordPressEventEmitter::class)->addAction($action, $listener, $priority);
-    }
-
-    /**
-     * Wrapper for the WordPress add_filter function for hooks
-     *
-     * @param string $filter
-     * @param \League\Event\ListenerInterface|callable $listener
-     * @param int $priority
-     * @param int $args
-     * @return mixed
-     */
-    public function addFilter($filter, $listener, $priority = Emitter::P_NORMAL, $args = 1)
-    {
-        return $this->get(WordPressEventEmitter::class)->addFilter($filter, $listener, $priority, $args);
-    }
-
-    /**
      * Define all your actions and WP hooks
-     *
-     * @return mixed
      */
     abstract public function run();
+
+    /**
+     * This will be called when the plugin is activated
+     */
+    public function activate() {}
+
+    /**
+     * This will be called when the plugin is deactivated
+     */
+    public function deactivate() {}
 
     /**
      * Register any other services required by the plugin

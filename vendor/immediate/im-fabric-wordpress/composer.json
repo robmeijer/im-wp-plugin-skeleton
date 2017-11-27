@@ -1,0 +1,11 @@
+{
+    "name": "immediate/im-fabric-wordpress",
+    "description": "The Immediate Fabric WordPress support package",
+    "type": "library",
+    "license": "Proprietary",
+    "autoload": {
+        "psr-4": {
+            "IM\\Fabric\\Package\\WordPress\\": "src/"
+        }
+    }
+}

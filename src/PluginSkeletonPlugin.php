@@ -1,34 +1,20 @@
 <?php
 
-namespace IM\PluginSkeleton;
+namespace IM\Fabric\Plugin\PluginSkeleton;
 
-use IM\Fabric\WordPressPlugin;
-use IM\PluginSkeleton\Handlers;
+use IM\Fabric\Package\Plugin\WordPressPlugin;
 
-/**
- * Class PluginSkeletonPlugin
- * @package IM\PluginSkeleton
- */
 class PluginSkeletonPlugin extends WordPressPlugin
 {
     const PLUGIN_ID = 'im-plugin-skeleton';
 
     /**
-     * Define all your actions and WP hooks
+     * The 'run' method is the core of the plugin functionality
+     * It acts as a "Controller Action" method
      */
     public function run()
     {
-        $this->addAction('init', $this->get(Handlers\InitHandler::class));
-    }
-
-    /**
-     * Register any other services required by the plugin
-     */
-    protected function boot()
-    {
-        // You can optionally register any additional classes or services required by this plugin.
-        // This will get executed first before running the plugin.
-
-        $this->add(Handlers\InitHandler::class);
+        $this->wp->addAction('example_wp_hook', $this->get(Action\DoSomething::class));
+        $this->wp->addFilter('another_example_wp_hook', $this->get(Filter\ChangeSomething::class));
     }
 }

@@ -8,7 +8,8 @@
  * Author URI: http://www.immediate.co.uk
  * License: GPL v2
  */
-if (!defined('ABSPATH')) {
+
+if (! defined('ABSPATH')) {
     return;
 }
 
@@ -18,5 +19,19 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-$plugin = new IM\PluginSkeleton\PluginSkeletonPlugin();
+// The following lines of code allows you to specify a local '/views' directory
+// Uncomment these lines if you wish to include views in the plugin
+//if (! class_exists(\Timber\Timber::class)) {
+//    return;
+//}
+//
+//\Timber\Timber::$locations[] = __DIR__ . '/views';
+
+$plugin = new IM\Fabric\Plugin\PluginSkeleton\PluginSkeletonPlugin();
+
+// If you want to register activation and de-activation hooks, you can uncomment the following lines
+// Make sure that your plugin has the required 'activate' and 'deactivate' methods
+//$plugin->wp()->registerActivationHook(__FILE__, [$plugin, 'activate']);
+//$plugin->wp()->registerDeactivationHook(__FILE__, [$plugin, 'deactivate']);
+
 $plugin->run();

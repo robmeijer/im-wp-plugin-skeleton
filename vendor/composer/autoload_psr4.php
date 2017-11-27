@@ -7,9 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'League\\Event\\' => array($vendorDir . '/league/event/src'),
     'League\\Container\\' => array($vendorDir . '/league/container/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
-    'IM\\PluginSkeleton\\' => array($baseDir . '/src'),
-    'IM\\Fabric\\' => array($vendorDir . '/immediate/im-wp-plugin/src'),
+    'IM\\Fabric\\Plugin\\PluginSkeleton\\' => array($baseDir . '/src'),
+    'IM\\Fabric\\Package\\WordPress\\' => array($vendorDir . '/immediate/im-fabric-wordpress/src'),
+    'IM\\Fabric\\Package\\Plugin\\' => array($vendorDir . '/immediate/im-wp-plugin/src'),
 );

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitea8eb9f08e5800169a988b0907c289b3
+class ComposerStaticInit917b135d9388315de098816ba578c163
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -13,14 +13,14 @@ class ComposerStaticInitea8eb9f08e5800169a988b0907c289b3
         ),
         'L' => 
         array (
-            'League\\Event\\' => 13,
             'League\\Container\\' => 17,
         ),
         'I' => 
         array (
             'Interop\\Container\\' => 18,
-            'IM\\PluginSkeleton\\' => 18,
-            'IM\\Fabric\\' => 10,
+            'IM\\Fabric\\Plugin\\PluginSkeleton\\' => 32,
+            'IM\\Fabric\\Package\\WordPress\\' => 28,
+            'IM\\Fabric\\Package\\Plugin\\' => 25,
         ),
     );
 
@@ -28,10 +28,6 @@ class ComposerStaticInitea8eb9f08e5800169a988b0907c289b3
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
-        'League\\Event\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/league/event/src',
         ),
         'League\\Container\\' => 
         array (
@@ -41,24 +37,30 @@ class ComposerStaticInitea8eb9f08e5800169a988b0907c289b3
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
-        'IM\\PluginSkeleton\\' => 
+        'IM\\Fabric\\Plugin\\PluginSkeleton\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'IM\\Fabric\\' => 
+        'IM\\Fabric\\Package\\WordPress\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src',
+        ),
+        'IM\\Fabric\\Package\\Plugin\\' => 
         array (
             0 => __DIR__ . '/..' . '/immediate/im-wp-plugin/src',
         ),
     );
 
     public static $classMap = array (
-        'IM\\Fabric\\Contracts\\AddFilterHandlerInterface' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Contracts/AddFilterHandlerInterface.php',
-        'IM\\Fabric\\Events\\WordPressEventEmitter' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Events/WordPressEventEmitter.php',
-        'IM\\Fabric\\Handlers\\AbstractAddFilterHandler' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Handlers/AbstractAddFilterHandler.php',
-        'IM\\Fabric\\Providers\\EventServiceProvider' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/Providers/EventServiceProvider.php',
-        'IM\\Fabric\\WordPressPlugin' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressPlugin.php',
-        'IM\\PluginSkeleton\\Handlers\\InitHandler' => __DIR__ . '/../..' . '/src/Handlers/InitHandler.php',
-        'IM\\PluginSkeleton\\PluginSkeletonPlugin' => __DIR__ . '/../..' . '/src/PluginSkeletonPlugin.php',
+        'IM\\Fabric\\Package\\Plugin\\WordPressAware' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressAware.php',
+        'IM\\Fabric\\Package\\Plugin\\WordPressAwareInterface' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressAwareInterface.php',
+        'IM\\Fabric\\Package\\Plugin\\WordPressPlugin' => __DIR__ . '/..' . '/immediate/im-wp-plugin/src/WordPressPlugin.php',
+        'IM\\Fabric\\Package\\WordPress\\Action' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Action.php',
+        'IM\\Fabric\\Package\\WordPress\\Filter' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/Filter.php',
+        'IM\\Fabric\\Package\\WordPress\\WordPress' => __DIR__ . '/..' . '/immediate/im-fabric-wordpress/src/WordPress.php',
+        'IM\\Fabric\\Plugin\\PluginSkeleton\\Action\\DoSomething' => __DIR__ . '/../..' . '/src/Action/DoSomething.php',
+        'IM\\Fabric\\Plugin\\PluginSkeleton\\Filter\\ChangeSomething' => __DIR__ . '/../..' . '/src/Filter/ChangeSomething.php',
+        'IM\\Fabric\\Plugin\\PluginSkeleton\\PluginSkeletonPlugin' => __DIR__ . '/../..' . '/src/PluginSkeletonPlugin.php',
         'Interop\\Container\\ContainerInterface' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/ContainerInterface.php',
         'Interop\\Container\\Exception\\ContainerException' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php',
         'Interop\\Container\\Exception\\NotFoundException' => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container/Exception/NotFoundException.php',
@@ -92,24 +94,6 @@ class ComposerStaticInitea8eb9f08e5800169a988b0907c289b3
         'League\\Container\\ServiceProvider\\ServiceProviderAggregateInterface' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/ServiceProviderAggregateInterface.php',
         'League\\Container\\ServiceProvider\\ServiceProviderInterface' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/ServiceProviderInterface.php',
         'League\\Container\\ServiceProvider\\SignatureServiceProviderInterface' => __DIR__ . '/..' . '/league/container/src/ServiceProvider/SignatureServiceProviderInterface.php',
-        'League\\Event\\AbstractEvent' => __DIR__ . '/..' . '/league/event/src/AbstractEvent.php',
-        'League\\Event\\AbstractListener' => __DIR__ . '/..' . '/league/event/src/AbstractListener.php',
-        'League\\Event\\CallbackListener' => __DIR__ . '/..' . '/league/event/src/CallbackListener.php',
-        'League\\Event\\Emitter' => __DIR__ . '/..' . '/league/event/src/Emitter.php',
-        'League\\Event\\EmitterAwareInterface' => __DIR__ . '/..' . '/league/event/src/EmitterAwareInterface.php',
-        'League\\Event\\EmitterAwareTrait' => __DIR__ . '/..' . '/league/event/src/EmitterAwareTrait.php',
-        'League\\Event\\EmitterInterface' => __DIR__ . '/..' . '/league/event/src/EmitterInterface.php',
-        'League\\Event\\EmitterTrait' => __DIR__ . '/..' . '/league/event/src/EmitterTrait.php',
-        'League\\Event\\Event' => __DIR__ . '/..' . '/league/event/src/Event.php',
-        'League\\Event\\EventInterface' => __DIR__ . '/..' . '/league/event/src/EventInterface.php',
-        'League\\Event\\Generator' => __DIR__ . '/..' . '/league/event/src/Generator.php',
-        'League\\Event\\GeneratorInterface' => __DIR__ . '/..' . '/league/event/src/GeneratorInterface.php',
-        'League\\Event\\GeneratorTrait' => __DIR__ . '/..' . '/league/event/src/GeneratorTrait.php',
-        'League\\Event\\ListenerAcceptor' => __DIR__ . '/..' . '/league/event/src/ListenerAcceptor.php',
-        'League\\Event\\ListenerAcceptorInterface' => __DIR__ . '/..' . '/league/event/src/ListenerAcceptorInterface.php',
-        'League\\Event\\ListenerInterface' => __DIR__ . '/..' . '/league/event/src/ListenerInterface.php',
-        'League\\Event\\ListenerProviderInterface' => __DIR__ . '/..' . '/league/event/src/ListenerProviderInterface.php',
-        'League\\Event\\OneTimeListener' => __DIR__ . '/..' . '/league/event/src/OneTimeListener.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
@@ -118,9 +102,9 @@ class ComposerStaticInitea8eb9f08e5800169a988b0907c289b3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitea8eb9f08e5800169a988b0907c289b3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitea8eb9f08e5800169a988b0907c289b3::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitea8eb9f08e5800169a988b0907c289b3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit917b135d9388315de098816ba578c163::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit917b135d9388315de098816ba578c163::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit917b135d9388315de098816ba578c163::$classMap;
 
         }, null, ClassLoader::class);
     }
