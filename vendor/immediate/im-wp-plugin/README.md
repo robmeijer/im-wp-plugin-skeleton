@@ -1,5 +1,5 @@
 # IM Plugin
-This is a WordPress plugin base package that supports Dependency Injection and comes with an Event Handler.
+This is a WordPress plugin base package that supports Dependency Injection and comes with OO wrappers for basic WordPress functionality.
 
 ## Install
 Via Composer
@@ -13,27 +13,30 @@ If the package is not available through a Composer package manager, you can also
 "repositories": [
     {
         "type": "vcs",
-        "url": "git@github.immediate.co.uk:WCP/im-wp-plugin.git"
+        "url": "git@github.immediate.co.uk:WCP-Packages/im-wp-plugin.git"
+    },
+    {
+        "type": "vcs",
+        "url": "git@github.immediate.co.uk:WCP-Packages/im-fabric-wordpress.git"
     }
 ],
 "require": {
-    "immediate/im-wp-plugin": "^0.3"
+    "immediate/im-wp-plugin": "^1.0"
 }
 ```
 
 ## Requirements
-- PHP >=5.4
+- PHP >=5.6
 
 ## Getting Started
-You can create a new plugin by extending the WordPressPlugin class. This requires the run() and boot() methods.
+You can create a new plugin by extending the WordPressPlugin class. This requires the run() method.
 ```php
 <?php
 // MyPlugin.php
 
+namespace IM\Fabric\Plugin\MyService;
 
-namespace IM\MyPlugin;
-
-use IM\Fabric\WordPressPlugin;
+use IM\Fabric\Package\Plugin\WordPressPlugin;
 
 class MyPlugin extends WordPressPlugin
 {
@@ -42,9 +45,7 @@ class MyPlugin extends WordPressPlugin
      */
     public function run()
     {
-        $this->addAction('init', function () {
-            // This will execute on the init hook
-        });
+        $this->wp->addAction('example_wp_hook', $this->get(Action\DoSomething::class));
     }
 
     /**
@@ -58,25 +59,46 @@ class MyPlugin extends WordPressPlugin
 }
 
 ```
-### Using a class as an event listener
-Instead of using a closure, you can also create a Listener class as an event listener.
+## Actions and Filters
+Instead of using closures, it is recommended to use classes for actions and filters.
 
-The Listener needs to either implement the ListenerInterface, or extend the AbstractListener class.
+There is a base `Action` class and a base `Filter` class available which can be extended.
 
-The documentation/example can be found here: http://event.thephpleague.com/2.0/listeners/classes/ 
+These require `action()` and `filter()` methods respectively, that will contain most of the logic.
 
+If you wish to have additional calls to `AddAction()` and `AddFilter()`, your class needs to implement
+the `WordPressAwareInterface` interface, and import the `WordPressAware` trait.
 
-Before using the listener, you need to add it to the container first. This can be done in the boot() method.
+This will make a `WordPress` service available, which can be accessed at `$this-wp`, e.g. `$this->wp->addAction()`.
+
+Example:
 ```php
-protected function boot()
+<?php
+// DoSomething.php
+
+namespace IM\Fabric\Plugin\MyService\Action;
+
+use IM\Fabric\Package\Plugin\WordPressAware;
+use IM\Fabric\Package\Plugin\WordPressAwareInterface;
+use IM\Fabric\Package\WordPress\Action;
+
+class DoSomething extends Action implements WordPressAwareInterface
 {
-    $this->add(DoSomethingOnWpHook::class);
+    use WordPressAware;
+    
+    private $doSomethingElse;
+    
+    public function __construct(DoSomethingElse $doSomethingElse)
+    {
+        $this->doSomethingElse = $doSomethingElse;        
+    }
+    
+    public function action(...$args)
+    {
+        $this->wp->addAction('another_example_wp_hook', $this->doSomethingElse);
+    }
 }
 
-```
-Once added, it can be used as the event listener in the run() method.
-```php
-$this->addAction('init', $this->get(DoSomethingOnWpHook::class));
 ```
 
 ## Finishing up
@@ -101,7 +123,7 @@ if (file_exists( __DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
-$plugin = new IM\MyPlugin\MyPlugin();
+$plugin = new IM\Fabric\Plugin\MyService\MyPlugin();
 $plugin->run();
 
 ```

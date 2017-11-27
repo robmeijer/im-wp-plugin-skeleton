@@ -16,6 +16,17 @@ class WordPress
     }
 
     /**
+     * Wrapped for the WordPress do_action function for hooks
+     *
+     * @param string $hook
+     * @param mixed $arg
+     */
+    public function doAction($hook, $arg = '')
+    {
+        do_action($hook, $arg);
+    }
+
+    /**
      * Wrapper for the WordPress add_filter function for hooks
      *
      * @param string $hook
@@ -24,6 +35,19 @@ class WordPress
     public function addFilter($hook, Filter $filter)
     {
         add_filter($hook, [$filter, 'filter'], $filter->priority(), $filter->arguments());
+    }
+
+    /**
+     * Wrapper for the WordPress apply_filters function for hooks
+     *
+     * @param string $hook
+     * @param mixed $value
+     *
+     * @return mixed
+     */
+    public function applyFilters($hook, $value)
+    {
+        return apply_filters($hook, $value);
     }
 
     /**
