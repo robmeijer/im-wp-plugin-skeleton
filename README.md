@@ -52,9 +52,6 @@ Please refer to [www.php-fig.org/psr/psr-4](http://www.php-fig.org/psr/psr-4) fo
 #### Plugin Git Repository
 When starting fresh with a new plugin, you first need to delete the existing `.git` directory, and initialise a new repository using `git init`.
 
-#### Composer
-In order to install your local dependencies, you need to run `composer install -o`. This will update your `composer.lock` file with the installed dependencies, as well as optimise the autoloader. Make sure that the `composer.lock` file is committed.
-
 #### Actions
 The actions are dedicated classes that should be triggered for your WP action hooks.
 These should be located in `/src/Action` with the namespace `IM\Fabric\Plugin\<Service>\Action` e.g. `IM\Fabric\Plugin\MyService\Action`.
@@ -67,7 +64,7 @@ The Action can be resolved out of the container as follows:
 ...
 public function run()
 {
-    $this->wp->addAction('init', $this->get(Action\DoSomething::class));
+    $this->wp()->addAction('init', $this->get(Action\DoSomething::class));
 }
 ```
 
@@ -79,7 +76,14 @@ These should be located in `/src/Filter` with the namespace `IM\Fabric\Plugin\<S
 If you wish to have additional calls to `AddAction()` and `AddFilter()` from your Action or Filter, your class needs to implement
 the `WordPressAwareInterface` interface, and import the `WordPressAware` trait.
 
-This will make a `WordPress` service available, which can be accessed at `$this-wp`, e.g. `$this->wp->addAction()`.
+This will make a `WordPress` service available, which can be accessed at `$this-wp()`, e.g. `$this->wp()->addAction()`.
 
 #### Services
 Any service classes you use should ideally be injected through the constructor, using type-hinting. The container will then be able to auto-resolve the service.
+
+#### PHPUnit Tests
+In order to run your tests locally, you need to run the following commands in your plugin directory:
+```bash
+$ composer install
+$ ./vendor/bin/phpunit
+```

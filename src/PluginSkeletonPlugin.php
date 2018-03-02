@@ -14,7 +14,7 @@ class PluginSkeletonPlugin extends WordPressPlugin
      */
     public function run()
     {
-        $this->wp->addAction('example_wp_hook', $this->get(Action\DoSomething::class));
-        $this->wp->addFilter('another_example_wp_hook', $this->get(Filter\ChangeSomething::class));
+        $this->wp()->addAction('example_wp_hook', $this->get(Action\DoSomething::class));
+        $this->wp()->addFilter('another_example_wp_hook', $this->get(Filter\ChangeSomething::class));
     }
 }

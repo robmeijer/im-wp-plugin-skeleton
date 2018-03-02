@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
+
+<phpunit bootstrap="tests/bootstrap.php"
+         beStrictAboutTestsThatDoNotTestAnything="false"
+         backupGlobals="false"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false">
+         convertWarningsToExceptions="true">
+
   <testsuites>
-    <testsuite name="Application Test Suite">
+    <testsuite name="Plugin Test Suite">
       <directory suffix="Test.php">./tests</directory>
     </testsuite>
   </testsuites>
+
+  <listeners>
+    <listener class="Yandex\Allure\Adapter\AllureAdapter" file="vendor/allure-framework/allure-phpunit/src/Yandex/Allure/Adapter/AllureAdapter.php">
+      <arguments>
+        <string>build/allure-results</string> <!-- XML files output directory -->
+        <boolean>true</boolean> <!-- Whether to delete previous results on rerun -->
+      </arguments>
+    </listener>
+  </listeners>
 </phpunit>
