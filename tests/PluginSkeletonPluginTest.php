@@ -10,7 +10,7 @@ class PluginSkeletonPluginTest extends TestCase
 {
     public function testInstanceOfWordPressPlugin()
     {
-        $plugin = $this->getMockForAbstractClass(PluginSkeletonPlugin::class);
+        $plugin = new PluginSkeletonPlugin();
         $this->assertInstanceOf(WordPressPlugin::class, $plugin);
     }
 }
