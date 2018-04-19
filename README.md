@@ -55,7 +55,7 @@ When starting fresh with a new plugin, you first need to delete the existing `.g
 #### Actions
 The actions are dedicated classes that should be triggered for your WP action hooks.
 These should be located in `/src/Action` with the namespace `IM\Fabric\Plugin\<Service>\Action` e.g. `IM\Fabric\Plugin\MyService\Action`.
-Each action should extend `IM\Fabric\Package\WordPress\Action`, which requires a public method called `action()`.
+Each action should extend `IM\Fabric\Package\WordPress\Hook\Action`, which requires a public method called `action()`.
 The Action can be resolved out of the container as follows:
 ```php
 <?php
@@ -64,7 +64,7 @@ The Action can be resolved out of the container as follows:
 ...
 public function run()
 {
-    $this->wp()->addAction('init', $this->get(Action\DoSomething::class));
+    $this->wordPress->addAction('init', $this->get(Action\DoSomething::class));
 }
 ```
 
@@ -74,16 +74,34 @@ These should be located in `/src/Filter` with the namespace `IM\Fabric\Plugin\<S
 
 #### Nested Actions/Filters
 If you wish to have additional calls to `AddAction()` and `AddFilter()` from your Action or Filter, your class needs to implement
-the `WordPressAwareInterface` interface, and import the `WordPressAware` trait.
+the `WordPressAwareInterface` interface, and import the `WordPressAwareTrait` trait.
 
-This will make a `WordPress` service available, which can be accessed at `$this-wp()`, e.g. `$this->wp()->addAction()`.
+This will make a `WordPress` service available, which can be accessed at `$this->wordPress`, e.g. `$this->wordPress->addAction()`.
 
 #### Services
 Any service classes you use should ideally be injected through the constructor, using type-hinting. The container will then be able to auto-resolve the service.
+
+## Testing
 
 #### PHPUnit Tests
 In order to run your tests locally, you need to run the following commands in your plugin directory:
 ```bash
 $ composer install
 $ ./vendor/bin/phpunit
+```
+
+#### Testing WordPress
+Any class that makes direct calls to any WordPress functions, should make use of the WP_Mock testing framework.
+
+The framework offers its own base `\WP_Mock\Tools\TestCase` class, which should be extended instead of PHPUnit's `TestCase` class.
+
+The WP_Mock framework uses the Mockery testing framework to make its assertions. However, this isn't compatible with PHPUnit by default. In order for PHPUnit to recognise the Mockery assertions, you need to use Mockery's `MockeryPHPUnitIntegration` trait as follows:
+
+```php
+<?php
+
+class MyTestCase extends \WP_Mock\Tools\TestCase
+{
+    use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+}
 ```
