@@ -31,7 +31,7 @@ $plugin = new IM\Fabric\Plugin\PluginSkeleton\PluginSkeletonPlugin();
 
 // If you want to register activation and de-activation hooks, you can uncomment the following lines
 // Make sure that your plugin has the required 'activate' and 'deactivate' methods
-//$plugin->wp()->registerActivationHook(__FILE__, [$plugin, 'activate']);
-//$plugin->wp()->registerDeactivationHook(__FILE__, [$plugin, 'deactivate']);
+//$plugin->wordPress->registerActivationHook(__FILE__, [$plugin, 'activate']);
+//$plugin->wordPress->registerDeactivationHook(__FILE__, [$plugin, 'deactivate']);
 
 $plugin->run();
