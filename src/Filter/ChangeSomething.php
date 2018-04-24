@@ -2,7 +2,7 @@
 
 namespace IM\Fabric\Plugin\PluginSkeleton\Filter;
 
-use IM\Fabric\Package\WordPress\Hook\Filter;
+use IM\Fabric\Package\WordPress\Filter\Filter;
 
 class ChangeSomething extends Filter
 {

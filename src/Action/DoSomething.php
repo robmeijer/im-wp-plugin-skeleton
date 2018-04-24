@@ -2,7 +2,7 @@
 
 namespace IM\Fabric\Plugin\PluginSkeleton\Action;
 
-use IM\Fabric\Package\WordPress\Hook\Action;
+use IM\Fabric\Package\WordPress\Action\Action;
 
 class DoSomething extends Action
 {
