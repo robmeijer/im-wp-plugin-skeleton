@@ -55,7 +55,7 @@ When starting fresh with a new plugin, you first need to delete the existing `.g
 #### Actions
 The actions are dedicated classes that should be triggered for your WP action hooks.
 These should be located in `/src/Action` with the namespace `IM\Fabric\Plugin\<Service>\Action` e.g. `IM\Fabric\Plugin\MyService\Action`.
-Each action should extend `IM\Fabric\Package\WordPress\Hook\Action`, which requires a public method called `action()`.
+Each action should extend `IM\Fabric\Package\WordPress\Action\Action`, which requires a public method called `action()`.
 The Action can be resolved out of the container as follows:
 ```php
 <?php
@@ -69,8 +69,9 @@ public function run()
 ```
 
 #### Filters
-The filters are almost identical to the actions, and are dedicated classes that should be triggered for your WP hooks that support filters.
-These should be located in `/src/Filter` with the namespace `IM\Fabric\Plugin\<Service>\Filter` e.g. `IM\Fabric\Plugin\MyService\Filter`.
+The filters are almost identical to the actions, and are dedicated classes that should be triggered for your WP hooks that support filters.\
+These should be located in `/src/Filter` with the namespace `IM\Fabric\Plugin\<Service>\Filter` e.g. `IM\Fabric\Plugin\MyService\Filter`.\
+Each filter should extend `IM\Fabric\Package\WordPress\Filter\Filter`, which requires a public method called `filter()`.
 
 #### Nested Actions/Filters
 If you wish to have additional calls to `AddAction()` and `AddFilter()` from your Action or Filter, your class needs to implement
