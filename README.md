@@ -79,7 +79,7 @@ This will make a `WordPress` service available, which can be accessed at `$this-
 ### Services
 Any service classes you use should ideally be injected through the constructor, using type-hinting. The container will then be able to auto-resolve the service.
 
-## Finishing up
+## Finishing Up
 
 ### Plugin Git Repository
 When starting fresh with a new plugin, you first need to delete the existing `.git` directory, and initialise a new repository using `git init`.
