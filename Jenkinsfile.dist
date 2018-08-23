@@ -2,7 +2,7 @@
 
 timestamps {
   node {
-
+    cleanWs()
     checkout scm
 
     //PHPUnit test+ allure code begins

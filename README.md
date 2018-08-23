@@ -47,12 +47,9 @@ The file name should be the same as the class name, e.g. `SubscriptionsPlugin.ph
    
 Please refer to [www.php-fig.org/psr/psr-4](http://www.php-fig.org/psr/psr-4) for more information.
 
-## Finishing up
+## Basic Usage
 
-#### Plugin Git Repository
-When starting fresh with a new plugin, you first need to delete the existing `.git` directory, and initialise a new repository using `git init`.
-
-#### Actions
+### Actions
 The actions are dedicated classes that should be triggered for your WP action hooks.
 These should be located in `/src/Action` with the namespace `IM\Fabric\Plugin\<Service>\Action` e.g. `IM\Fabric\Plugin\MyService\Action`.
 Each action should extend `IM\Fabric\Package\WordPress\Action\Action`, which requires a public method called `action()`.
@@ -68,30 +65,42 @@ public function run()
 }
 ```
 
-#### Filters
+### Filters
 The filters are almost identical to the actions, and are dedicated classes that should be triggered for your WP hooks that support filters.\
 These should be located in `/src/Filter` with the namespace `IM\Fabric\Plugin\<Service>\Filter` e.g. `IM\Fabric\Plugin\MyService\Filter`.\
 Each filter should extend `IM\Fabric\Package\WordPress\Filter\Filter`, which requires a public method called `filter()`.
 
-#### Nested Actions/Filters
+### Nested Actions/Filters
 If you wish to have additional calls to `AddAction()` and `AddFilter()` from your Action or Filter, your class needs to implement
 the `WordPressAwareInterface` interface, and import the `WordPressAwareTrait` trait.
 
 This will make a `WordPress` service available, which can be accessed at `$this->wordPress`, e.g. `$this->wordPress->addAction()`.
 
-#### Services
+### Services
 Any service classes you use should ideally be injected through the constructor, using type-hinting. The container will then be able to auto-resolve the service.
+
+## Finishing up
+
+### Plugin Git Repository
+When starting fresh with a new plugin, you first need to delete the existing `.git` directory, and initialise a new repository using `git init`.
+
+### Jenkins Integration
+The plugin skeleton comes with an example `Jenkinsfile.dist` file.
+
+Once the plugin is ready to trigger Jenkins builds, this file can be renamed to `Jenkinsfile`, and be updated if necessary.
+
+By default, this will run PHPUnit tests, and generate Allure reports for these tests. If any commits are made to the plugin's `develop` branch, it will also trigger a build of `wcp-core`.
 
 ## Testing
 
-#### PHPUnit Tests
+### PHPUnit Tests
 In order to run your tests locally, you need to run the following commands in your plugin directory:
 ```bash
 $ composer install
 $ ./vendor/bin/phpunit
 ```
 
-#### Testing WordPress
+### Testing WordPress
 Any class that makes direct calls to any WordPress functions, should make use of the WP_Mock testing framework.
 
 The framework offers its own base `\WP_Mock\Tools\TestCase` class, which should be extended instead of PHPUnit's `TestCase` class.
