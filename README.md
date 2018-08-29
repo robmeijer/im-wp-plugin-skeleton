@@ -115,3 +115,26 @@ class MyTestCase extends \WP_Mock\Tools\TestCase
     use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 }
 ```
+
+## Linting
+
+### PHP CodeSniffer (phpcs)
+In order to run the linter locally, you need to run the following commands in your plugin directory:
+```bash
+$ composer install
+$ ./vendor/bin/phpcs
+```
+This will read the default `phpcs.xml` file, which defines the following standards:
+
+##### PSR-2: Coding Style Guide
+The intent of this guide is to reduce cognitive friction when scanning code from different authors. It does so by enumerating a shared set of rules and expectations about how to format PHP code.
+
+Please refer to [www.php-fig.org/psr/psr-2](http://www.php-fig.org/psr/psr-2) for more information.
+
+##### PSR-12: Extended Coding Style Guide
+This specification extends, expands and replaces PSR-2, the coding style guide and requires adherence to PSR-1, the basic coding standard.
+
+Please refer to [https://github.com/php-fig/fig-standards/blob/master/proposed/extended-coding-style-guide.md](https://github.com/php-fig/fig-standards/blob/master/proposed/extended-coding-style-guide.md) for more information.
+
+### PHP Code Beautifier and Fixer (phpcbf)
+PHP CodeSniffer may report that PHPCBF can fix certain detected violations. However, this is not suggested. It is recommended to fix the violations manually.
