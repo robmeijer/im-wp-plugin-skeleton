@@ -7,6 +7,10 @@ timestamps {
 
     //PHPUnit test+ allure code begins
     try {
+      stage('PHP CodeSniffer') {
+        sh '/usr/local/bin/composer install -o'
+        sh './vendor/bin/phpcs'
+      }
       stage('PHPUnit Tests') {
          sh '/usr/local/bin/composer install -o'
          sh './vendor/bin/phpunit'
